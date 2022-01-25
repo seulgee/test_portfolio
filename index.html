@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<head>
+	<title>SEULGEE LEE</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/fonts/Abide/Abide.otf">
+    <link rel="stylesheet" type="text/css" href="css/fonts/Abide/Abide.woff">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+	<script src="scripts/script.js"></script>
+	<script type=module src="scripts/global.js"></script>
+</head>
+
+<body>
+	<global-header></global-header>
+
+    <section id="middle-1">
+        <div id="container-middle" class="container">
+            <div id="middle-left" class=col-2>
+                <h2 id="hello">Hello!</h2>
+            </div>
+            <div id="middle-left" class=col-3>
+                <p id="display-text">Nice to meet you—I’m Seulgee. I am a digital product designer and tattoo artist currently based in Chicago, IL.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="middle-2">
+        <div class="container">
+			<div id ="image-design" class="col-2-5">
+				<h3>Design</h3>
+				<a href="design.html"><div class="image-overlay"></div></a>
+			</div>
+			<div id="image-tattoo" class="col-2-5">
+				<h3>Tattoo</h3>
+				<a href="tattoo.html"><div class="image-overlay"></div></a>
+			</div>
+		</div>
+    </section>
+
+	<global-footer></global-footer>
+
+	<script>
+		//preloader
+		
+		$(window).on('load', function() {
+     		$('#loader-wrapper').fadeOut(300,'swing');
+  		});
+		
+		//scroll to top
+
+		$('.top, .to-top').click(function () {
+    			$('html, body').animate({
+        			scrollTop: $('.top-name').eq(0).offset().top
+    			}, 400);
+			});
+
+		//navigation
+
+	  	var nav = $("#navigation")
+  		var hamburger = $(".hamburger");
+  		hamburger.on("click", function(e) {
+			hamburger.toggleClass("is-active");
+			nav.find($("ul")).css({
+				"font-size": "30px"
+			})
+			nav.find($("a")).css({
+				"padding": "15px 0px 15px 0",
+				"line-height": "30px"
+			})
+			nav.toggle(250);
+    		$("#name").toggleClass('bg-color', 300, "easeOutSine");
+  		});
+
+		var y = window.matchMedia("(max-width: 414px)")
+		myFunction(y) // Call listener function at run time
+		y.addListener(myFunction) // Attach listener function on state changes
+
+		function myFunction(y) {
+    		if (y.matches){
+    			hamburger.show();
+    			nav.hide();
+
+    		} else {
+    			hamburger.hide();
+    			nav.show();
+    		}
+    	};
+
+		//thumbnails
+
+	</script>
+
+</body>
+
+</html>

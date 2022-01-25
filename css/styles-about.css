@@ -1,0 +1,25 @@
+.container-images {
+    display: block;
+    position: relative;
+}
+
+#image-yelly {
+    display: block;
+    opacity: 0;
+    top: 0;
+    z-index: 3;
+    position: absolute;
+    transition: .2s ease-in-out;
+}
+
+#image-yelly:hover {
+    opacity: 1;
+    transition: .2s ease-in-out;
+}
+
+#image-about {
+    display: block;
+    top: 0;
+    z-index: 2;
+    position: relative
+}
